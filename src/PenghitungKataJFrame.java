@@ -53,6 +53,11 @@ public class PenghitungKataJFrame extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jButton1.setText("Hitung Jumlah Kata");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         BtnBersih.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         BtnBersih.setText("Bersih");
@@ -132,6 +137,18 @@ public class PenghitungKataJFrame extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
        System.exit(0);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String sentence = TextAreaKata.getText();
+        int i=0,kata=1;
+        
+        for(i=0;i<sentence.length();i++)
+        {
+            if(sentence.charAt(i)==' ')
+              kata++;
+        }
+          TextHasil.setText(" "+kata);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
